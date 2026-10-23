@@ -19,15 +19,12 @@ of the CPU time.
 You can trigger this feature (and the delay) by sending a `USR1` signal and
 remove it (if needed) by sending a `USR2` signal:
 
-```
+```sh
+# Replace 12345 with the running productcatalogservice process ID.
 # Trigger bug
-kubectl exec \
-    $(kubectl get pods -l app=productcatalogservice -o jsonpath='{.items[0].metadata.name}') \
-    -c server -- kill -USR1 1
+kill -USR1 12345
 # Remove bug
-kubectl exec \
-    $(kubectl get pods -l app=productcatalogservice -o jsonpath='{.items[0].metadata.name}') \
-    -c server -- kill -USR2 1
+kill -USR2 12345
 ```
 
 ## Latency injection

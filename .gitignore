@@ -20,7 +20,6 @@
 *~
 bin/
 build/
-Dockerfile.pip
 node_modules/
 obj/
 pkg/
